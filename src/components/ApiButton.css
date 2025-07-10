@@ -1,0 +1,146 @@
+.api-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.api-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  min-width: 160px;
+  position: relative;
+  overflow: hidden;
+}
+
+.api-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.api-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+.api-button--loading {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  cursor: not-allowed;
+  animation: pulse 1.5s infinite;
+}
+
+.api-button--success {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  animation: successPulse 0.6s ease-out;
+}
+
+.api-button--error {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  animation: errorShake 0.5s ease-in-out;
+}
+
+.api-button--disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.api-button--disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.api-button__error {
+  color: #e74c3c;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  padding: 8px 12px;
+  background: rgba(231, 76, 60, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  max-width: 300px;
+}
+
+.api-button__success {
+  color: #27ae60;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  padding: 8px 12px;
+  background: rgba(39, 174, 96, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(39, 174, 96, 0.2);
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Анимации */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes errorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .api-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-width: 140px;
+  }
+  
+  .api-button-container {
+    padding: 15px;
+  }
+} 
