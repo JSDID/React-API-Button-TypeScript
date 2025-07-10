@@ -1,6 +1,5 @@
 # React API Button с TypeScript
 
-Проект демонстрирует использование React с TypeScript для создания компонентов с API запросами через axios.
 
 ## 🚀 Возможности
 
